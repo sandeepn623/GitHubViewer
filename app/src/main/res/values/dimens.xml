@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin">5dp</dimen>
+    <dimen name="default_marginTop">15dp</dimen>
+    <dimen name="default_margin_bottom">20dp</dimen>
+    <dimen name="zero_width">0dp</dimen>
+    <dimen name="card_item_text_size">15sp</dimen>
+    <dimen name="default_loading_bar_margin">8dp</dimen>
+</resources>

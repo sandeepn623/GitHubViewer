@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repo"
+            type="com.invia.githubviewer.model.RepoItem" />
+
+        <variable
+            name="callback"
+            type="com.invia.githubviewer.ui.GithubRepoViewerClickCallback" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_margin_bottom"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:background="@mipmap/ic_launcher"
+                android:gravity="center"
+                app:imageUrl="@{repo.repoOwner.avatarUrl}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/repo_name"
+                android:layout_width="@dimen/zero_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_marginTop"
+                android:textSize="@dimen/card_item_text_size"
+                android:text="@{repo.name}"
+                app:layout_constraintStart_toEndOf="@id/avatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/default_repostiory_name" />
+
+            <TextView
+                android:id="@+id/repo_fork_info_label"
+                android:layout_width="@dimen/zero_width"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_margin"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:textSize="@dimen/card_item_text_size"
+                android:layout_marginTop="@dimen/default_marginTop"
+                android:text="@string/default_forks"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/repo_fork_info"
+                tools:text="@string/default_forks" />
+
+            <TextView
+                android:id="@+id/repo_fork_info"
+                android:layout_width="@dimen/zero_width"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_margin"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:textSize="@dimen/card_item_text_size"
+                android:layout_marginTop="@dimen/default_marginTop"
+                android:text="@{String.valueOf(repo.forksCount)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/default_forks" />
+
+            <TextView
+                android:id="@+id/repo_description"
+                android:layout_width="@dimen/zero_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:textSize="@dimen/card_item_text_size"
+                android:text="@{repo.description}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/avatar"
+                tools:layout_editor_absoluteX="@dimen/default_margin"
+                tools:text="@string/default_description" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

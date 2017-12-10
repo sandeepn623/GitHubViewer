@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GitHubViewer</string>
+    <string name="retry">Retry</string>
+    <string name="empty_search_result">No results found</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="default_description">this is some description more description</string>
+    <string name="default_repostiory_name">repository name</string>
+    <string name="default_forks">Forks</string>
+    <string name="default_subscribers_name">subscribers name</string>
+</resources>
